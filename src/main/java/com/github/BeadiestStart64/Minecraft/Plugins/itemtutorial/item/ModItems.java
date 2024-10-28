@@ -13,6 +13,8 @@ public class ModItems {
     // MODIDと同じ制約がある
     public static final Item PINK_GARNET = registerItem("pink_garnet", new Item(new Item.Settings()));
 
+    public static final Item RAW_PINK_GARNET = registerItem("raw_pink_garnet", new Item(new Item.Settings()));
+
     // アイテムを登録する
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(ItemTutorial.MOD_ID, name), item);
@@ -22,6 +24,9 @@ public class ModItems {
         // ログに残す
         ItemTutorial.LOGGER.info("Registering Mod Items for " + ItemTutorial.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> entries.add(PINK_GARNET));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+            entries.add(PINK_GARNET);
+            entries.add(RAW_PINK_GARNET);
+        });
     }
 }
