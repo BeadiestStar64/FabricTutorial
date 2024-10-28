@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "itemtutorial",
+  "version": "${version}",
+  "name": "ItemTutorial",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/itemtutorial/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.github.BeadiestStart64.Minecraft.Plugins.itemtutorial.client.ItemTutorialClient"
+    ],
+    "main": [
+      "com.github.BeadiestStart64.Minecraft.Plugins.itemtutorial.ItemTutorial"
+    ]
+  },
+  "mixins": [
+    "itemtutorial.mixins.json",
+    {
+      "config": "itemtutorial.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
