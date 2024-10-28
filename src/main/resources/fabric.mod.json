@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "fabrictutorial",
+  "version": "${version}",
+  "name": "FabricTutorial",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/fabrictutorial/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.github.BeadiestStart64.Minecraft.Plugins.fabrictutorial.client.FabricTutorialClient"
+    ],
+    "main": [
+      "com.github.BeadiestStart64.Minecraft.Plugins.fabrictutorial.FabricTutorial"
+    ]
+  },
+  "mixins": [
+    "fabrictutorial.mixins.json",
+    {
+      "config": "fabrictutorial.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
