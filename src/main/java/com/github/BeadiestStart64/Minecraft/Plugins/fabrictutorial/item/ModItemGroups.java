@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
 
-    public static final ItemGroup PINK_GARNET_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
+    public static ItemGroup PINK_GARNET_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(FabricTutorial.MOD_ID, "pink_garnet_items"),
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PINK_GARNET))
                     .displayName(Text.translatable("itemgroup.tutorialmod.pink_garnet_items"))
@@ -23,16 +23,40 @@ public class ModItemGroups {
                         entries.add(ModItems.CHISEL);
                     }).build());
 
-    public static final ItemGroup PINK_GARNET_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
+    public static ItemGroup PINK_GARNET_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(FabricTutorial.MOD_ID, "pink_garnet_blocks"),
             FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.PINK_GARNET_BLOCK))
                     .displayName(Text.translatable("itemgroup.tutorialmod.pink_garnet_blocks"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.PINK_GARNET_BLOCK);
                         entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
+
+                        entries.add(ModBlocks.MAGIC_BLOCK);
                     }).build());
 
     public static void registerItemGroups() {
         FabricTutorial.LOGGER.info("Registering Item Groups for " + FabricTutorial.MOD_ID);
+
+        /*PINK_GARNET_BLOCKS_GROUP  = Registry.register(Registries.ITEM_GROUP,
+                Identifier.of(FabricTutorial.MOD_ID, "pink_garnet_blocks"),
+                FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.PINK_GARNET_BLOCK))
+                        .displayName(Text.translatable("itemgroup.tutorialmod.pink_garnet_blocks"))
+                        .entries((displayContext, entries) -> {
+                            entries.add(ModBlocks.PINK_GARNET_BLOCK);
+                            entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
+                        }).build());
+
+        PINK_GARNET_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
+                Identifier.of(FabricTutorial.MOD_ID, "pink_garnet_items"),
+                FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PINK_GARNET))
+                        .displayName(Text.translatable("itemgroup.tutorialmod.pink_garnet_items"))
+                        .entries((displayContext, entries) -> {
+                            entries.add(ModItems.PINK_GARNET);
+                            entries.add(ModItems.RAW_PINK_GARNET);
+
+                            entries.add(ModItems.CHISEL);
+                        }).build());
+
+         */
     }
 }

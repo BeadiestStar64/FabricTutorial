@@ -1,6 +1,7 @@
 package com.github.BeadiestStart64.Minecraft.Plugins.fabrictutorial.block;
 
 import com.github.BeadiestStart64.Minecraft.Plugins.fabrictutorial.FabricTutorial;
+import com.github.BeadiestStart64.Minecraft.Plugins.fabrictutorial.block.custom.MagicBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -31,7 +32,8 @@ public class ModBlocks {
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
                     AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
 
-
+    public static final Block MAGIC_BLOCK = registerBlock("magic_block",
+            new MagicBlock(AbstractBlock.Settings.create().strength(1f).requiresTool()));
 
     // ブロックを登録
     // これはワールドでの動作を定義
@@ -60,6 +62,8 @@ public class ModBlocks {
 
             entries.add(ModBlocks.PINK_GARNET_ORE);
             entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
+
+            entries.add(ModBlocks.MAGIC_BLOCK);
         });
     }
 }
